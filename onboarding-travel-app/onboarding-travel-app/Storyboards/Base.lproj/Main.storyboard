@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="onboarding_travel_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-7H-guA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHR-Rf-RGm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="YUi-gH-y6j">
+                                        <rect key="frame" x="149.5" y="846" width="115.5" height="26"/>
+                                    </pageControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nri-pR-dzL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="XUs-XQ-2Gk">
+                                                <rect key="frame" x="36" y="374.5" width="342" height="97.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Your Way" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS0-Sh-kpx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="215" height="31.5"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore thousands of hotels and find the perfect accomodation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8o-nR-Rtd">
+                                                        <rect key="frame" x="0.0" y="45.5" width="337.5" height="52"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="XUs-XQ-2Gk" firstAttribute="leading" secondItem="Nri-pR-dzL" secondAttribute="leading" constant="36" id="YBF-Os-Dci"/>
+                                            <constraint firstItem="XUs-XQ-2Gk" firstAttribute="centerY" secondItem="Nri-pR-dzL" secondAttribute="centerY" id="jgT-Rv-E9E"/>
+                                            <constraint firstAttribute="trailing" secondItem="XUs-XQ-2Gk" secondAttribute="trailing" constant="36" id="kir-9u-Yy9"/>
+                                            <constraint firstItem="XUs-XQ-2Gk" firstAttribute="centerX" secondItem="Nri-pR-dzL" secondAttribute="centerX" id="uoZ-Ow-3Xs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nri-pR-dzL" secondAttribute="trailing" id="2ts-H5-fpU"/>
+                                    <constraint firstItem="YUi-gH-y6j" firstAttribute="centerX" secondItem="vHR-Rf-RGm" secondAttribute="centerX" id="DKC-69-PRG"/>
+                                    <constraint firstItem="YUi-gH-y6j" firstAttribute="top" secondItem="Nri-pR-dzL" secondAttribute="bottom" id="HDa-f2-sKK"/>
+                                    <constraint firstItem="Nri-pR-dzL" firstAttribute="top" secondItem="vHR-Rf-RGm" secondAttribute="top" id="Iia-Gb-8Mp"/>
+                                    <constraint firstAttribute="bottom" secondItem="YUi-gH-y6j" secondAttribute="bottom" constant="24" id="nkT-Rz-o3K"/>
+                                    <constraint firstItem="Nri-pR-dzL" firstAttribute="leading" secondItem="vHR-Rf-RGm" secondAttribute="leading" id="wTv-Rr-it6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cqJ-7H-guA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hby-hn-8j3"/>
+                            <constraint firstItem="cqJ-7H-guA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="S6Q-yH-6dX"/>
+                            <constraint firstItem="vHR-Rf-RGm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZJ5-b9-gHt"/>
+                            <constraint firstAttribute="bottom" secondItem="cqJ-7H-guA" secondAttribute="bottom" id="c1D-hA-V32"/>
+                            <constraint firstItem="vHR-Rf-RGm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fg8-cU-MSJ"/>
+                            <constraint firstItem="cqJ-7H-guA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tvO-Ii-DQi"/>
+                            <constraint firstAttribute="bottom" secondItem="vHR-Rf-RGm" secondAttribute="bottom" id="y0A-aM-XEc"/>
+                            <constraint firstItem="vHR-Rf-RGm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yUy-yO-p9B"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="cqJ-7H-guA" id="hID-U0-emC"/>
+                        <outlet property="darkView" destination="vHR-Rf-RGm" id="3Yy-h9-cfw"/>
+                        <outlet property="detailLabel" destination="I8o-nR-Rtd" id="7gy-Ig-Z5h"/>
+                        <outlet property="pageControl" destination="YUi-gH-y6j" id="o3d-rC-Xwe"/>
+                        <outlet property="titleLabel" destination="QS0-Sh-kpx" id="TFI-G3-sqN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
