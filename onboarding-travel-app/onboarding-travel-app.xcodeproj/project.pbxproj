@@ -23,7 +23,7 @@
 		C9526D2A28B67FCE0026BDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9526D2C28B67FD10026BDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9526D2F28B67FD10026BDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C9526D3128B67FD10026BDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9526D3128B67FD10026BDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-travel-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +37,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C93A27E128B6801D00634195 /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C9526D2328B67FCE0026BDBA /* AppDelegate.swift */,
+				C9526D2528B67FCE0026BDBA /* SceneDelegate.swift */,
+			);
+			path = "Application Delegates";
+			sourceTree = "<group>";
+		};
+		C93A27E228B6802A00634195 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C9526D2928B67FCE0026BDBA /* Main.storyboard */,
+				C9526D2E28B67FD10026BDBA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C93A27E328B6802F00634195 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9526D2C28B67FD10026BDBA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C93A27E428B6803300634195 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9526D3128B67FD10026BDBA /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C93A27E528B6804A00634195 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9526D2728B67FCE0026BDBA /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		C9526D1728B67FCE0026BDBA = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +98,11 @@
 		C9526D2228B67FCE0026BDBA /* onboarding-travel-app */ = {
 			isa = PBXGroup;
 			children = (
-				C9526D2328B67FCE0026BDBA /* AppDelegate.swift */,
-				C9526D2528B67FCE0026BDBA /* SceneDelegate.swift */,
-				C9526D2728B67FCE0026BDBA /* ViewController.swift */,
-				C9526D2928B67FCE0026BDBA /* Main.storyboard */,
-				C9526D2C28B67FD10026BDBA /* Assets.xcassets */,
-				C9526D2E28B67FD10026BDBA /* LaunchScreen.storyboard */,
-				C9526D3128B67FD10026BDBA /* Info.plist */,
+				C93A27E128B6801D00634195 /* Application Delegates */,
+				C93A27E528B6804A00634195 /* View Controllers */,
+				C93A27E228B6802A00634195 /* Storyboards */,
+				C93A27E328B6802F00634195 /* Resources */,
+				C93A27E428B6803300634195 /* Supporting Files */,
 			);
 			path = "onboarding-travel-app";
 			sourceTree = "<group>";
@@ -288,7 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "onboarding-travel-app/Info.plist";
+				INFOPLIST_FILE = "onboarding-travel-app/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +355,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "onboarding-travel-app/Info.plist";
+				INFOPLIST_FILE = "onboarding-travel-app/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
