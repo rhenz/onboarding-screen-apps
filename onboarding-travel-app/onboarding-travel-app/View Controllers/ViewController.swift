@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var backgroundImageView: UIImageView!
     
     private let onboardingItems: [OnboardingItem] = OnboardingItem.createItems()
-    private let currentPage = 0
+    private var currentPage = 0
     
     // MARK: - View Lifecycle
     
@@ -53,6 +53,36 @@ extension ViewController {
 
 extension ViewController {
     @objc private func handleTapAnimation() {
-        print("Tapped")
+        // First animation - title
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+            self.titleLabel.alpha = 0.8
+            self.titleLabel.transform = CGAffineTransform(translationX: -30, y: 0)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+                self.titleLabel.alpha = 0
+                self.titleLabel.transform = CGAffineTransform(translationX: 0, y: -550 )
+            }
+        }
+
+        // Second animation - detail label
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+            self.detailLabel.alpha = 0.8
+            self.detailLabel.transform = CGAffineTransform(translationX: -30, y: 0)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+                self.detailLabel.alpha = 0
+                self.detailLabel.transform = CGAffineTransform(translationX: -30, y: -55)
+            } completion: { _ in
+                print("done")
+                // Show next onboarding screen
+                self.currentPage += 1
+                self.titleLabel.alpha = 1.0
+                self.detailLabel.alpha = 1.0
+                self.titleLabel.transform = .identity
+                self.detailLabel.transform = .identity
+                self.setupScreen(for: self.currentPage)
+            }
+        }
+
     }
 }
