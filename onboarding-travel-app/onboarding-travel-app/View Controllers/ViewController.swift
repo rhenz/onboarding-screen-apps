@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     
     @IBOutlet var pageControl: UIPageControl!
@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var detailLabel: UILabel!
     @IBOutlet var darkView: UIView!
     @IBOutlet var backgroundImageView: UIImageView!
+    
+    private let onboardingItems: [OnboardingItem] = OnboardingItem.createItems()
     
     // MARK: - View Lifecycle
     

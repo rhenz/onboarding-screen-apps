@@ -13,6 +13,7 @@
 		C9526D2B28B67FCE0026BDBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9526D2928B67FCE0026BDBA /* Main.storyboard */; };
 		C9526D2D28B67FD10026BDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9526D2C28B67FD10026BDBA /* Assets.xcassets */; };
 		C9526D3028B67FD10026BDBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9526D2E28B67FD10026BDBA /* LaunchScreen.storyboard */; };
+		C956EDA428B70068000F7C2D /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956EDA328B70068000F7C2D /* OnboardingItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C9526D2C28B67FD10026BDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9526D2F28B67FD10026BDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9526D3128B67FD10026BDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-travel-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C956EDA328B70068000F7C2D /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,21 @@
 			isa = PBXGroup;
 			children = (
 				C93A27E128B6801D00634195 /* Application Delegates */,
+				C956EDA228B7005E000F7C2D /* Models */,
 				C93A27E528B6804A00634195 /* View Controllers */,
 				C93A27E228B6802A00634195 /* Storyboards */,
 				C93A27E328B6802F00634195 /* Resources */,
 				C93A27E428B6803300634195 /* Supporting Files */,
 			);
 			path = "onboarding-travel-app";
+			sourceTree = "<group>";
+		};
+		C956EDA228B7005E000F7C2D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C956EDA328B70068000F7C2D /* OnboardingItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9526D2828B67FCE0026BDBA /* ViewController.swift in Sources */,
+				C956EDA428B70068000F7C2D /* OnboardingItem.swift in Sources */,
 				C9526D2428B67FCE0026BDBA /* AppDelegate.swift in Sources */,
 				C9526D2628B67FCE0026BDBA /* SceneDelegate.swift in Sources */,
 			);
