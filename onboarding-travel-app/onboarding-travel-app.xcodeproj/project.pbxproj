@@ -14,6 +14,7 @@
 		C9526D2D28B67FD10026BDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9526D2C28B67FD10026BDBA /* Assets.xcassets */; };
 		C9526D3028B67FD10026BDBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9526D2E28B67FD10026BDBA /* LaunchScreen.storyboard */; };
 		C956EDA428B70068000F7C2D /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956EDA328B70068000F7C2D /* OnboardingItem.swift */; };
+		C97A9F5A28B7BBC700078625 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A9F5928B7BBC700078625 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C9526D2F28B67FD10026BDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9526D3128B67FD10026BDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-travel-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C956EDA328B70068000F7C2D /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
+		C97A9F5928B7BBC700078625 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				C9526D2728B67FCE0026BDBA /* ViewController.swift */,
+				C97A9F5928B7BBC700078625 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				C956EDA428B70068000F7C2D /* OnboardingItem.swift in Sources */,
 				C9526D2428B67FCE0026BDBA /* AppDelegate.swift in Sources */,
 				C9526D2628B67FCE0026BDBA /* SceneDelegate.swift in Sources */,
+				C97A9F5A28B7BBC700078625 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

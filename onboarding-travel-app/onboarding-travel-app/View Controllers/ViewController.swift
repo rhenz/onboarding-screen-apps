@@ -28,6 +28,10 @@ class ViewController: UIViewController {
         setupScreen(for: currentPage)
         setupGestures()
     }
+    
+    deinit {
+        print("Deinit ViewController Onboarding")
+    }
 }
 
 // MARK: - Setup UI
@@ -41,6 +45,10 @@ extension ViewController {
         titleLabel.text = onboardingItems[index].title
         detailLabel.text = onboardingItems[index].detail
         pageControl.currentPage = index
+        titleLabel.alpha = 1.0
+        detailLabel.alpha = 1.0
+        titleLabel.transform = .identity
+        detailLabel.transform = .identity
     }
     
     private func setupGestures() {
@@ -73,16 +81,32 @@ extension ViewController {
                 self.detailLabel.alpha = 0
                 self.detailLabel.transform = CGAffineTransform(translationX: -30, y: -55)
             } completion: { _ in
-                print("done")
                 // Show next onboarding screen
                 self.currentPage += 1
-                self.titleLabel.alpha = 1.0
-                self.detailLabel.alpha = 1.0
-                self.titleLabel.transform = .identity
-                self.detailLabel.transform = .identity
-                self.setupScreen(for: self.currentPage)
+                
+                
+                if self.isOverLastItem() {
+                    // Show main screen
+                    self.showMainScreen()
+                } else {
+                    self.setupScreen(for: self.currentPage)
+                }
+                
             }
         }
-
+    }
+    
+    private func isOverLastItem() -> Bool {
+        return currentPage >= self.onboardingItems.count
+    }
+    
+    private func showMainScreen() {
+        
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController")
+        
+        if let window = view.window {
+            window.rootViewController = mainVC
+            UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        }
     }
 }

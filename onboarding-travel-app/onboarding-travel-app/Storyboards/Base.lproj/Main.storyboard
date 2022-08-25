@@ -91,6 +91,33 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Txg-C3-gmb">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="9f1-yV-6kB" customClass="MainViewController" customModule="onboarding_travel_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ddq-2u-0nI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhH-LK-Jvt">
+                                <rect key="frame" x="159.5" y="437.5" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hP8-BF-0H9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IhH-LK-Jvt" firstAttribute="centerX" secondItem="ddq-2u-0nI" secondAttribute="centerX" id="CII-iZ-hnB"/>
+                            <constraint firstItem="IhH-LK-Jvt" firstAttribute="centerY" secondItem="ddq-2u-0nI" secondAttribute="centerY" id="rTp-2S-ffS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLq-dF-G3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="115"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
