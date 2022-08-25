@@ -23,9 +23,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupPageControl()
     }
+}
 
+// MARK: - Setup UI
 
+extension ViewController {
+    func setupPageControl() {
+        pageControl.numberOfPages = onboardingItems.count
+    }
 }
 
