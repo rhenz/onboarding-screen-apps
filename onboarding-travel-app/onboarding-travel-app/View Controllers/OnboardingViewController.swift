@@ -20,6 +20,10 @@ class OnboardingViewController: UIViewController {
     private let onboardingItems: [OnboardingItem] = OnboardingItem.createItems()
     private var currentPage = 0
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
