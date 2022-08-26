@@ -35,7 +35,8 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController {
     private func setupViews() {
-        darkView.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        pageControl.allowsContinuousInteraction = false
+        pageControl.isUserInteractionEnabled = false
     }
     
     private func updateBackgroundImage(index: Int) {
@@ -70,6 +71,11 @@ extension OnboardingViewController {
 // MARK: - Actions
 
 extension OnboardingViewController {
+    
+    private var isOverLastItem: Bool {
+        currentPage >= self.onboardingItems.count
+    }
+    
     @objc private func handleTapAnimation() {
         // First animation - title
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
@@ -100,24 +106,17 @@ extension OnboardingViewController {
                 // Show next onboarding screen
                 self.currentPage += 1
                 
-                
-                if self.isOverLastItem() {
+                if self.isOverLastItem {
                     // Show main screen
                     self.showMainScreen()
                 } else {
                     self.setupScreen(for: self.currentPage)
                 }
-                
             }
         }
     }
     
-    private func isOverLastItem() -> Bool {
-        return currentPage >= self.onboardingItems.count
-    }
-    
     private func showMainScreen() {
-        
         let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController")
         
         if let window = view.window {
