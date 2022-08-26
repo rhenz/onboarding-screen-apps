@@ -31,6 +31,19 @@ class OnboardingViewController: UIViewController {
     }
 }
 
+// MARK: - Navigation
+
+extension OnboardingViewController {
+    private func showMainScreen() {
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController")
+        
+        if let window = view.window {
+            window.rootViewController = mainVC
+            UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        }
+    }
+}
+
 // MARK: - Setup UI
 
 extension OnboardingViewController {
@@ -142,15 +155,6 @@ extension OnboardingViewController {
                     self.setupScreen(for: self.currentPage)
                 }
             }
-        }
-    }
-    
-    private func showMainScreen() {
-        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainViewController")
-        
-        if let window = view.window {
-            window.rootViewController = mainVC
-            UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
     }
 }
