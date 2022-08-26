@@ -40,6 +40,7 @@ extension OnboardingViewController {
     }
     
     private func updateBackgroundImage(index: Int) {
+        guard index < onboardingItems.count else { return }
         UIView.transition(with: backgroundImageView,
                           duration: 0.5,
                           options: .transitionCrossDissolve) {
@@ -56,10 +57,17 @@ extension OnboardingViewController {
         detailLabel.text = onboardingItems[index].detail
         pageControl.currentPage = index
         
-        titleLabel.alpha = 1.0
-        detailLabel.alpha = 1.0
-        titleLabel.transform = .identity
-        detailLabel.transform = .identity
+        // Return to original place
+        self.titleLabel.transform = .identity
+        self.detailLabel.transform = .identity
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .transitionCrossDissolve) {
+            self.titleLabel.alpha = 1.0
+        }
+        
+        UIView.animate(withDuration: 0.4, delay: 0.2, options: .transitionCrossDissolve) {
+            self.detailLabel.alpha = 1.0
+        }
     }
     
     private func setupGestures() {
@@ -77,31 +85,52 @@ extension OnboardingViewController {
     }
     
     @objc private func handleTapAnimation() {
+        
+        let animationDuration = 0.5
+        let damping = 0.5
+        let initialSpringVelocity = 0.5
+        let moveToLeftValue: CGFloat = 30
+        
         // First animation - title
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+        UIView.animate(withDuration: animationDuration,
+                       delay: 0,
+                       usingSpringWithDamping: damping,
+                       initialSpringVelocity:
+                        initialSpringVelocity,
+                       options: .curveEaseInOut) {
             self.titleLabel.alpha = 0.8
-            self.titleLabel.transform = CGAffineTransform(translationX: -30, y: 0)
+            self.titleLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
         } completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: damping,
+                           initialSpringVelocity: initialSpringVelocity,
+                           options: .curveEaseInOut) {
                 self.titleLabel.alpha = 0
                 self.titleLabel.transform = CGAffineTransform(translationX: 0, y: -550 )
             }
         }
         
         // Second animation - detail label
-        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+        UIView.animate(withDuration: animationDuration,
+                       delay: 0.5,
+                       usingSpringWithDamping: damping,
+                       initialSpringVelocity: initialSpringVelocity,
+                       options: .curveEaseInOut) {
             self.detailLabel.alpha = 0.8
-            self.detailLabel.transform = CGAffineTransform(translationX: -30, y: 0)
+            self.detailLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
         } completion: { _ in
+            // Change background image
+            self.updateBackgroundImage(index: self.currentPage + 1)
             
-            // Update background image
-            if self.currentPage < self.onboardingItems.count - 1 {
-                self.updateBackgroundImage(index: self.currentPage + 1)
-            }
-            
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut) {
+            // Remove detail label out of the screen
+            UIView.animate(withDuration: animationDuration,
+                           delay: 0,
+                           usingSpringWithDamping: damping,
+                           initialSpringVelocity: initialSpringVelocity,
+                           options: .curveEaseInOut) {
                 self.detailLabel.alpha = 0
-                self.detailLabel.transform = CGAffineTransform(translationX: -30, y: -55)
+                self.detailLabel.transform = CGAffineTransform(translationX: -30, y: -30)
             } completion: { _ in
                 // Show next onboarding screen
                 self.currentPage += 1
