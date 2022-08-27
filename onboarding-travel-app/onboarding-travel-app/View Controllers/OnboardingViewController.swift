@@ -20,6 +20,12 @@ class OnboardingViewController: UIViewController {
     private let onboardingItems: [OnboardingItem] = OnboardingItem.createItems()
     private var currentPage = 0
     
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapAnimation))
+        view.addGestureRecognizer(tapGesture)
+        return tapGesture
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
@@ -30,7 +36,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setupPageControl()
         setupScreen(for: currentPage)
-        setupGestures()
+        enableTapGesture()
         setupViews()
     }
 }
@@ -59,7 +65,7 @@ extension OnboardingViewController {
     private func updateBackgroundImage(index: Int) {
         guard index < onboardingItems.count else { return }
         UIView.transition(with: backgroundImageView,
-                          duration: 0.5,
+                          duration: 0.8,
                           options: .transitionCrossDissolve) {
             self.backgroundImageView.image = self.onboardingItems[index].bgImage
         }
@@ -78,18 +84,26 @@ extension OnboardingViewController {
         self.titleLabel.transform = .identity
         self.detailLabel.transform = .identity
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .transitionCrossDissolve) {
-            self.titleLabel.alpha = 1.0
-        }
-        
-        UIView.animate(withDuration: 0.4, delay: 0.2, options: .transitionCrossDissolve) {
-            self.detailLabel.alpha = 1.0
+        UIView.animateKeyframes(withDuration: 0.8, delay: 0, options: .beginFromCurrentState) {
+            UIView.addKeyframe(withRelativeStartTime: 0,
+                               relativeDuration: 0.4) {
+                self.titleLabel.alpha = 1.0
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.4) {
+                self.detailLabel.alpha = 1.0
+            }
+        } completion: { _ in
+            self.enableTapGesture()
         }
     }
     
-    private func setupGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapAnimation))
-        view.addGestureRecognizer(tapGesture)
+    private func enableTapGesture() {
+        tapGesture.isEnabled = true
+    }
+    
+    private func disableTapGesture() {
+        tapGesture.isEnabled = false
     }
 }
 
@@ -101,64 +115,52 @@ extension OnboardingViewController {
         currentPage >= self.onboardingItems.count
     }
     
-    @objc private func handleTapAnimation() {
-        
-        let animationDuration = 0.5
-        let damping = 0.5
-        let initialSpringVelocity = 0.5
+    private func animateOnboardingScreen() {
         let moveToLeftValue: CGFloat = 30
         
-        // First animation - title
-        UIView.animate(withDuration: animationDuration,
-                       delay: 0,
-                       usingSpringWithDamping: damping,
-                       initialSpringVelocity:
-                        initialSpringVelocity,
-                       options: .curveEaseInOut) {
-            self.titleLabel.alpha = 0.8
-            self.titleLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.5,
-                           delay: 0,
-                           usingSpringWithDamping: damping,
-                           initialSpringVelocity: initialSpringVelocity,
-                           options: .curveEaseInOut) {
-                self.titleLabel.alpha = 0
-                self.titleLabel.transform = CGAffineTransform(translationX: 0, y: -550 )
+        disableTapGesture()
+        UIView.animateKeyframes(withDuration: 1.2,
+                                delay: 0,
+                                options: .beginFromCurrentState) {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0,
+                               relativeDuration: 0.2) {
+                self.titleLabel.alpha = 0.8
+                self.titleLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
             }
-        }
-        
-        // Second animation - detail label
-        UIView.animate(withDuration: animationDuration,
-                       delay: 0.5,
-                       usingSpringWithDamping: damping,
-                       initialSpringVelocity: initialSpringVelocity,
-                       options: .curveEaseInOut) {
-            self.detailLabel.alpha = 0.8
-            self.detailLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
-        } completion: { _ in
-            // Change background image
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.3,
+                               relativeDuration: 0.2) {
+                self.titleLabel.alpha = 0
+                self.titleLabel.transform = CGAffineTransform(translationX: 0, y: -550)
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.6,
+                               relativeDuration: 0.2) {
+                self.detailLabel.alpha = 0.8
+                self.detailLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.9,
+                               relativeDuration: 0.2) {
+                self.detailLabel.alpha = 0
+                self.detailLabel.transform = CGAffineTransform(translationX: 0, y: -550)
+            }
+            
             self.updateBackgroundImage(index: self.currentPage + 1)
             
-            // Remove detail label out of the screen
-            UIView.animate(withDuration: animationDuration,
-                           delay: 0,
-                           usingSpringWithDamping: damping,
-                           initialSpringVelocity: initialSpringVelocity,
-                           options: .curveEaseInOut) {
-                self.detailLabel.alpha = 0
-                self.detailLabel.transform = CGAffineTransform(translationX: -30, y: -30)
-            } completion: { _ in
-                // Show next onboarding screen
-                self.currentPage += 1
-                
-                if self.isOverLastItem {
-                    // Show main screen
-                    self.showMainScreen()
-                } else {
-                    self.setupScreen(for: self.currentPage)
-                }
+        } completion: { _ in
+            self.currentPage += 1
+            
+            if self.isOverLastItem {
+                self.showMainScreen()
+            } else {
+                self.setupScreen(for: self.currentPage)
             }
         }
+    }
+    
+    @objc private func handleTapAnimation() {
+        animateOnboardingScreen()
     }
 }
