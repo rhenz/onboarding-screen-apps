@@ -119,7 +119,7 @@ extension OnboardingViewController {
         let moveToLeftValue: CGFloat = 30
         
         disableTapGesture()
-        UIView.animateKeyframes(withDuration: 1.2,
+        UIView.animateKeyframes(withDuration: 1,
                                 delay: 0,
                                 options: .beginFromCurrentState) {
             
@@ -129,19 +129,19 @@ extension OnboardingViewController {
                 self.titleLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
             }
             
-            UIView.addKeyframe(withRelativeStartTime: 0.3,
+            UIView.addKeyframe(withRelativeStartTime: 0.2,
                                relativeDuration: 0.2) {
                 self.titleLabel.alpha = 0
                 self.titleLabel.transform = CGAffineTransform(translationX: 0, y: -550)
             }
             
-            UIView.addKeyframe(withRelativeStartTime: 0.6,
+            UIView.addKeyframe(withRelativeStartTime: 0.4,
                                relativeDuration: 0.2) {
                 self.detailLabel.alpha = 0.8
                 self.detailLabel.transform = CGAffineTransform(translationX: -moveToLeftValue, y: 0)
             }
             
-            UIView.addKeyframe(withRelativeStartTime: 0.9,
+            UIView.addKeyframe(withRelativeStartTime: 0.6,
                                relativeDuration: 0.2) {
                 self.detailLabel.alpha = 0
                 self.detailLabel.transform = CGAffineTransform(translationX: 0, y: -550)
