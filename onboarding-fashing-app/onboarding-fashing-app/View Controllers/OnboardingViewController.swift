@@ -16,6 +16,9 @@ class OnboardingViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     
+    // MARK: - Properties
+    private let items: [OnboardingItem] = OnboardingItem.createSampleData()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
