@@ -19,12 +19,26 @@ class OnboardingViewController: UIViewController {
     // MARK: - Properties
     private let items: [OnboardingItem] = OnboardingItem.createSampleData()
     
+    var currentIndex: Int {
+        Int(collectionView.contentOffset.x / collectionView.frame.width)
+    }
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
+        setupPageControl()
+    }
+}
+
+// MARK: - Helper Methods
+
+extension OnboardingViewController {
+    private func showNextOnboardingScreen(at indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        pageControl.currentPage = indexPath.item
     }
 }
 
@@ -41,6 +55,10 @@ extension OnboardingViewController {
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
     }
+    
+    private func setupPageControl() {
+        pageControl.numberOfPages = items.count
+    }
 }
 
 
@@ -48,10 +66,13 @@ extension OnboardingViewController {
 
 extension OnboardingViewController {
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        guard currentIndex < items.count-1 else { return }
+        let nextRow = currentIndex + 1
+        let nextIndexPath = IndexPath(row: nextRow, section: 0)
         
+        showNextOnboardingScreen(at: nextIndexPath)
     }
 }
-
 
 // MARK: - Collection View Datasource
 
