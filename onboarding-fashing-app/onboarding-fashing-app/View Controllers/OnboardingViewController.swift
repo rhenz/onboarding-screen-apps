@@ -38,7 +38,11 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     private func showNextOnboardingScreen(at indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
-        pageControl.currentPage = indexPath.item
+        updatePageControl(with: indexPath.item)
+    }
+    
+    private func updatePageControl(with index: Int) {
+        pageControl.currentPage = index
     }
 }
 
@@ -101,5 +105,13 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
         return 0
+    }
+}
+
+// MARK: - Scroll View Delegate
+
+extension OnboardingViewController {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        updatePageControl(with: currentIndex)
     }
 }
