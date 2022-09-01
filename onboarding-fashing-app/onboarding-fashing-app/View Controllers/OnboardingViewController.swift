@@ -16,6 +16,8 @@ class OnboardingViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     
+    private var imageViews: [UIImageView] = []
+    
     // MARK: - Properties
     private let items: [OnboardingItem] = OnboardingItem.createSampleData()
     
@@ -30,6 +32,7 @@ class OnboardingViewController: UIViewController {
         
         setupCollectionView()
         setupPageControl()
+        setupImageViews()
     }
 }
 
@@ -43,6 +46,28 @@ extension OnboardingViewController {
     
     private func updatePageControl(with index: Int) {
         pageControl.currentPage = index
+    }
+    
+    private func setupImageViews() {
+        items.forEach {
+            let imageView = UIImageView(image: UIImage(named: $0.imageName))
+            imageView.contentMode = .scaleAspectFill
+            imageView.alpha = 0.0
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.clipsToBounds = true
+            containerView.addSubview(imageView)
+            
+            NSLayoutConstraint.activate([
+                imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.8),
+                imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+                imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                imageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            ])
+            
+            self.imageViews.append(imageView)
+        }
+        imageViews.first?.alpha = 1.0
+        containerView.bringSubviewToFront(collectionView)
     }
 }
 
@@ -113,5 +138,20 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDe
 extension OnboardingViewController {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         updatePageControl(with: currentIndex)
+    }
+    
+    var collectionViewWidth: CGFloat { collectionView.frame.size.width }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let fadeInAlpha = (x - collectionViewWidth * CGFloat(currentIndex)) / collectionViewWidth
+        let fadeOutAlpha = CGFloat(1 - fadeInAlpha)
+        
+        let hasNextOrPreviousItem = (currentIndex < items.count - 1)
+        
+        if hasNextOrPreviousItem {
+            imageViews[currentIndex].alpha = fadeOutAlpha
+            imageViews[currentIndex + 1].alpha = fadeInAlpha
+        }
+        
     }
 }
