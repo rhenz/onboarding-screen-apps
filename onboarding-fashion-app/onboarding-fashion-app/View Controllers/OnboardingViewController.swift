@@ -115,6 +115,9 @@ extension OnboardingViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! QuoteCollectionViewCell
         let item = items[indexPath.row]
         cell.configure(with: item)
+        
+        let isLastIndex = indexPath.row == items.count-1
+        cell.showExploreButton(shouldShow: isLastIndex)
         return cell
     }
 }
@@ -130,6 +133,20 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let willDisplayLastIndex = indexPath.row == items.count-1
+        nextButton.isUserInteractionEnabled = !willDisplayLastIndex
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        let isShowingLastIndex = currentIndex == items.count - 1
+        UIView.animate(withDuration: 0.4, delay: 0, options: .transitionCrossDissolve) {
+            self.nextButton.alpha = isShowingLastIndex ? 0 : 1
+        }
     }
 }
 
