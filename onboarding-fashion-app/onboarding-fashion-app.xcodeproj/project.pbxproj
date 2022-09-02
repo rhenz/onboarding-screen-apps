@@ -20,14 +20,14 @@
 /* Begin PBXFileReference section */
 		C9757E6928BDAAB000E5B82B /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9757E6C28BDABA200E5B82B /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
-		C9E51B2128BB20D0002BC7AD /* onboarding-fashing-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "onboarding-fashing-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9A60B3028C24C0B00E854C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-fashion-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C9E51B2128BB20D0002BC7AD /* onboarding-fashion-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "onboarding-fashion-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E51B2428BB20D0002BC7AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9E51B2628BB20D0002BC7AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C9E51B2828BB20D0002BC7AD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C9E51B2B28BB20D0002BC7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9E51B2D28BB20D1002BC7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9E51B3028BB20D1002BC7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C9E51B3228BB20D1002BC7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-fashing-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		C9E51B1828BB20D0002BC7AD = {
 			isa = PBXGroup;
 			children = (
-				C9E51B2328BB20D0002BC7AD /* onboarding-fashing-app */,
+				C9E51B2328BB20D0002BC7AD /* onboarding-fashion-app */,
 				C9E51B2228BB20D0002BC7AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,12 +68,12 @@
 		C9E51B2228BB20D0002BC7AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C9E51B2128BB20D0002BC7AD /* onboarding-fashing-app.app */,
+				C9E51B2128BB20D0002BC7AD /* onboarding-fashion-app.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C9E51B2328BB20D0002BC7AD /* onboarding-fashing-app */ = {
+		C9E51B2328BB20D0002BC7AD /* onboarding-fashion-app */ = {
 			isa = PBXGroup;
 			children = (
 				C9E51B3828BB20DC002BC7AD /* Application Delegate */,
@@ -84,7 +84,7 @@
 				C9E51B3A28BB20F1002BC7AD /* Resources */,
 				C9E51B3B28BB20F5002BC7AD /* Supporting Files */,
 			);
-			path = "onboarding-fashing-app";
+			path = "onboarding-fashion-app";
 			sourceTree = "<group>";
 		};
 		C9E51B3828BB20DC002BC7AD /* Application Delegate */ = {
@@ -116,7 +116,7 @@
 		C9E51B3B28BB20F5002BC7AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C9E51B3228BB20D1002BC7AD /* Info.plist */,
+				C9A60B3028C24C0B00E854C8 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,9 +132,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C9E51B2028BB20D0002BC7AD /* onboarding-fashing-app */ = {
+		C9E51B2028BB20D0002BC7AD /* onboarding-fashion-app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9E51B3528BB20D1002BC7AD /* Build configuration list for PBXNativeTarget "onboarding-fashing-app" */;
+			buildConfigurationList = C9E51B3528BB20D1002BC7AD /* Build configuration list for PBXNativeTarget "onboarding-fashion-app" */;
 			buildPhases = (
 				C9E51B1D28BB20D0002BC7AD /* Sources */,
 				C9E51B1E28BB20D0002BC7AD /* Frameworks */,
@@ -144,9 +144,9 @@
 			);
 			dependencies = (
 			);
-			name = "onboarding-fashing-app";
+			name = "onboarding-fashion-app";
 			productName = "onboarding-fashing-app";
-			productReference = C9E51B2128BB20D0002BC7AD /* onboarding-fashing-app.app */;
+			productReference = C9E51B2128BB20D0002BC7AD /* onboarding-fashion-app.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -164,7 +164,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C9E51B1C28BB20D0002BC7AD /* Build configuration list for PBXProject "onboarding-fashing-app" */;
+			buildConfigurationList = C9E51B1C28BB20D0002BC7AD /* Build configuration list for PBXProject "onboarding-fashion-app" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -177,7 +177,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C9E51B2028BB20D0002BC7AD /* onboarding-fashing-app */,
+				C9E51B2028BB20D0002BC7AD /* onboarding-fashion-app */,
 			);
 		};
 /* End PBXProject section */
@@ -351,11 +351,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJQF9JJWDE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "onboarding-fashing-app/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "onboarding-fashion-app/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Fashion App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,11 +366,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jlcs.onboarding-fashing-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlcs.onboarding-fashion-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,11 +381,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJQF9JJWDE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "onboarding-fashing-app/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "onboarding-fashion-app/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Fashion App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -390,18 +396,18 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jlcs.onboarding-fashing-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlcs.onboarding-fashion-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9E51B1C28BB20D0002BC7AD /* Build configuration list for PBXProject "onboarding-fashing-app" */ = {
+		C9E51B1C28BB20D0002BC7AD /* Build configuration list for PBXProject "onboarding-fashion-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9E51B3328BB20D1002BC7AD /* Debug */,
@@ -410,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9E51B3528BB20D1002BC7AD /* Build configuration list for PBXNativeTarget "onboarding-fashing-app" */ = {
+		C9E51B3528BB20D1002BC7AD /* Build configuration list for PBXNativeTarget "onboarding-fashion-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9E51B3628BB20D1002BC7AD /* Debug */,

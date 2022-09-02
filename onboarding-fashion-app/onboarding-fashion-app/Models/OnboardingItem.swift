@@ -1,6 +1,6 @@
 //
 //  OnboardingItem.swift
-//  onboarding-fashing-app
+//  onboarding-fashion-app
 //
 //  Created by John Salvador on 8/30/22.
 //
