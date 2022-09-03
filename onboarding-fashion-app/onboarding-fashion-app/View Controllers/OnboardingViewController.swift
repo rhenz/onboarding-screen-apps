@@ -69,6 +69,18 @@ extension OnboardingViewController {
         imageViews.first?.alpha = 1.0
         containerView.bringSubviewToFront(collectionView)
     }
+    
+    private func showMainScreen() {
+        guard let mainVC = storyboard?.instantiateViewController(withIdentifier: MainViewController.storyboardId) as? MainViewController,
+              let window = self.view.window
+        else {
+            fatalError("Failed to initialize MainViewController from Storyboard and this should not fail.")
+        }
+        
+        window.rootViewController = mainVC
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+    }
 }
 
 // MARK: - Setup UI
@@ -118,6 +130,7 @@ extension OnboardingViewController: UICollectionViewDataSource {
         
         let isLastIndex = indexPath.row == items.count-1
         cell.showExploreButton(shouldShow: isLastIndex)
+        if isLastIndex { cell.delegate = self }
         return cell
     }
 }
@@ -170,5 +183,13 @@ extension OnboardingViewController {
             imageViews[currentIndex + 1].alpha = fadeInAlpha
         }
         
+    }
+}
+
+// MARK: - Quote Collection View Cell Delegate
+
+extension OnboardingViewController: QuoteCollectionViewCellDelegate {
+    func quoteCollectionViewCell(_ cell: QuoteCollectionViewCell, didTapExploreButton button: UIButton) {
+        showMainScreen()
     }
 }

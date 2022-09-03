@@ -7,9 +7,18 @@
 
 import UIKit
 
+protocol QuoteCollectionViewCellDelegate: AnyObject {
+    func quoteCollectionViewCell(_ cell: QuoteCollectionViewCell, didTapExploreButton button: UIButton)
+}
+
 class QuoteCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
+    weak var delegate: QuoteCollectionViewCellDelegate?
+    
     // MARK: - IBOutlets
+    
     @IBOutlet var authorNameLabel: UILabel!
     @IBOutlet var authorQuoteLabel: UILabel!
     @IBOutlet var exploreButton: UIButton!
@@ -19,7 +28,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
 
 extension QuoteCollectionViewCell {
     @IBAction func exploreButtonTapped(_ sender: UIButton) {
-        
+        delegate?.quoteCollectionViewCell(self, didTapExploreButton: sender)
     }
 }
 
