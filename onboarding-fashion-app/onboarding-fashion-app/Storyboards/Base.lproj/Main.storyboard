@@ -179,6 +179,33 @@
             </objects>
             <point key="canvasLocation" x="-75.362318840579718" y="94.419642857142847"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="6Es-GT-l6S">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="myx-Vb-oXj" customClass="MainViewController" customModule="onboarding_fashion_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d36-og-X7H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jj8-8X-9aW">
+                                <rect key="frame" x="111.5" y="426.5" width="191" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lP5-Xa-Ohy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jj8-8X-9aW" firstAttribute="centerY" secondItem="d36-og-X7H" secondAttribute="centerY" id="WbN-oK-Iq9"/>
+                            <constraint firstItem="jj8-8X-9aW" firstAttribute="centerX" secondItem="d36-og-X7H" secondAttribute="centerX" id="qoa-PG-zEM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zpo-2D-aev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="94"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">

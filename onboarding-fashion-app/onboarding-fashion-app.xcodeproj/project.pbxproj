@@ -15,6 +15,7 @@
 		C9E51B2C28BB20D0002BC7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E51B2A28BB20D0002BC7AD /* Main.storyboard */; };
 		C9E51B2E28BB20D1002BC7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9E51B2D28BB20D1002BC7AD /* Assets.xcassets */; };
 		C9E51B3128BB20D1002BC7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E51B2F28BB20D1002BC7AD /* LaunchScreen.storyboard */; };
+		C9F4C56B28C304BB0050BCDA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4C56A28C304BB0050BCDA /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C9E51B2B28BB20D0002BC7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9E51B2D28BB20D1002BC7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9E51B3028BB20D1002BC7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9F4C56A28C304BB0050BCDA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E51B2828BB20D0002BC7AD /* OnboardingViewController.swift */,
+				C9F4C56A28C304BB0050BCDA /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				C9E51B2928BB20D0002BC7AD /* OnboardingViewController.swift in Sources */,
 				C9757E6A28BDAAB000E5B82B /* QuoteCollectionViewCell.swift in Sources */,
 				C9757E6D28BDABA200E5B82B /* OnboardingItem.swift in Sources */,
+				C9F4C56B28C304BB0050BCDA /* MainViewController.swift in Sources */,
 				C9E51B2528BB20D0002BC7AD /* AppDelegate.swift in Sources */,
 				C9E51B2728BB20D0002BC7AD /* SceneDelegate.swift in Sources */,
 			);
