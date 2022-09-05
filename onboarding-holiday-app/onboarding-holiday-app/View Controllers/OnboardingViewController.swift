@@ -37,18 +37,26 @@ class OnboardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        hideNavigationBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        showNavigationBar()
     }
 }
 
 // MARK: - Setup UI
 
 extension OnboardingViewController {
+    private func showNavigationBar() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    private func hideNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     private func setupViews() {
         darkView.backgroundColor = UIColor.init(white: 0.1, alpha: 0.4)
     }
