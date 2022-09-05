@@ -13,6 +13,7 @@
 		C90435E828C5DCD30022D4E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90435E628C5DCD30022D4E7 /* Main.storyboard */; };
 		C90435EA28C5DCD40022D4E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90435E928C5DCD40022D4E7 /* Assets.xcassets */; };
 		C90435ED28C5DCD40022D4E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90435EB28C5DCD40022D4E7 /* LaunchScreen.storyboard */; };
+		C90435FA28C5E07D0022D4E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90435F928C5E07D0022D4E7 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C90435E928C5DCD40022D4E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C90435EC28C5DCD40022D4E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C90435EE28C5DCD40022D4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-holiday-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C90435F928C5E07D0022D4E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				C90435E428C5DCD30022D4E7 /* OnboardingViewController.swift */,
+				C90435F928C5E07D0022D4E7 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				C90435E528C5DCD30022D4E7 /* OnboardingViewController.swift in Sources */,
 				C90435E128C5DCD30022D4E7 /* AppDelegate.swift in Sources */,
 				C90435E328C5DCD30022D4E7 /* SceneDelegate.swift in Sources */,
+				C90435FA28C5E07D0022D4E7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
