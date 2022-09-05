@@ -15,6 +15,7 @@
 		C90435ED28C5DCD40022D4E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90435EB28C5DCD40022D4E7 /* LaunchScreen.storyboard */; };
 		C90435FA28C5E07D0022D4E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90435F928C5E07D0022D4E7 /* MainViewController.swift */; };
 		C967F0B728C5F24D001E5581 /* bg_holiday.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C967F0B628C5F22E001E5581 /* bg_holiday.mp4 */; };
+		C967F0BA28C6293C001E5581 /* AVPlayerLooperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967F0B928C6293C001E5581 /* AVPlayerLooperService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C90435EE28C5DCD40022D4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-holiday-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C90435F928C5E07D0022D4E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C967F0B628C5F22E001E5581 /* bg_holiday.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg_holiday.mp4; sourceTree = "<group>"; };
+		C967F0B928C6293C001E5581 /* AVPlayerLooperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerLooperService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C90435F428C5DCDC0022D4E7 /* Application Delegates */,
+				C967F0B828C62905001E5581 /* AVPlayerLooper */,
 				C90435F828C5DD050022D4E7 /* View Controllers */,
 				C90435F528C5DCF30022D4E7 /* Storyboards */,
 				C90435F628C5DCF90022D4E7 /* Resources */,
@@ -111,6 +114,14 @@
 				C90435F928C5E07D0022D4E7 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C967F0B828C62905001E5581 /* AVPlayerLooper */ = {
+			isa = PBXGroup;
+			children = (
+				C967F0B928C6293C001E5581 /* AVPlayerLooperService.swift */,
+			);
+			path = AVPlayerLooper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				C90435E128C5DCD30022D4E7 /* AppDelegate.swift in Sources */,
 				C90435E328C5DCD30022D4E7 /* SceneDelegate.swift in Sources */,
 				C90435FA28C5E07D0022D4E7 /* MainViewController.swift in Sources */,
+				C967F0BA28C6293C001E5581 /* AVPlayerLooperService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

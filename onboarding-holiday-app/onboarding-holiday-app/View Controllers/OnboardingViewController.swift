@@ -15,23 +15,29 @@ class OnboardingViewController: UIViewController {
     @IBOutlet var darkView: UIView!
     @IBOutlet var getStartedButton: UIButton!
     
-    override var prefersStatusBarHidden: Bool { true }
+    // MARK: - Properties
     
-    private var player: AVPlayer?
-    private var playerLayer: AVPlayerLayer?
+    private var playerLooperService: AVPlayerLooperService = {
+        guard let filePath = Bundle.main.path(forResource: "bg_holiday", ofType: "mp4") else {
+            fatalError("Failed to find video path.")
+        }
+        
+        return AVPlayerLooperService(with: URL(fileURLWithPath: filePath))
+    }()
+    
+    override var prefersStatusBarHidden: Bool { true }
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        playBackgroundVideoInLoop()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
-        setupPlayerIfNeeded()
-        restartVideo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,56 +57,8 @@ extension OnboardingViewController {
 // MARK: - AVPlayer
 
 extension OnboardingViewController {
-    private func buildPlayer() -> AVPlayer? {
-        guard let filePath = Bundle.main.path(forResource: "bg_holiday", ofType: ".mp4") else {
-            return nil
-        }
-        
-        let player = AVPlayer(url: URL(fileURLWithPath: filePath))
-        player.actionAtItemEnd = .none
-        player.isMuted = true
-        return player
-    }
-    
-    private func buildPlayerLayer() -> AVPlayerLayer? {
-        let layer = AVPlayerLayer(player: player)
-        layer.videoGravity = .resizeAspectFill
-        layer.frame = view.bounds
-        return layer
-    }
-    
-    private func playVideo() {
-        player?.play()
-    }
-    
-    private func restartVideo() {
-        player?.seek(to: .zero)
-        playVideo()
-    }
-    
-    private func pauseVideo() {
-        player?.pause()
-    }
-    
-    private func setupPlayerIfNeeded() {
-        player = buildPlayer()
-        playerLayer = buildPlayerLayer()
-        
-        guard let playerLayer = self.playerLayer,
-              viewDoesNotContainPlayerLayer
-        else {
-            return
-        }
-        
-        view.layer.insertSublayer(playerLayer, at: 0)
-    }
-    
-    private var viewDoesNotContainPlayerLayer: Bool {
-        if let playerLayer = self.playerLayer, let sublayers = view.layer.sublayers {
-            return !sublayers.contains(playerLayer)
-        } else {
-            return false
-        }
+    private func playBackgroundVideoInLoop() {
+        playerLooperService.playLoopedVideo(in: view)
     }
 }
 
