@@ -24,6 +24,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +37,14 @@ class OnboardingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+}
+
+// MARK: - Setup UI
+
+extension OnboardingViewController {
+    private func setupViews() {
+        darkView.backgroundColor = UIColor.init(white: 0.1, alpha: 0.4)
     }
 }
 
