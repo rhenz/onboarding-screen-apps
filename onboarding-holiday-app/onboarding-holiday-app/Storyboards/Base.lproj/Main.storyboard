@@ -34,7 +34,7 @@
                                                     <constraint firstAttribute="height" constant="56" id="b0a-8z-4zF"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Get started">
+                                                <buttonConfiguration key="configuration" style="plain" title="Get started" cornerStyle="capsule">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     </backgroundConfiguration>
