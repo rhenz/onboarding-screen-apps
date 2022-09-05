@@ -9,6 +9,13 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    
+    @IBOutlet var darkView: UIView!
+    @IBOutlet var getStartedButton: UIButton!
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,3 +24,10 @@ class OnboardingViewController: UIViewController {
 
 }
 
+// MARK: - Actions
+
+extension OnboardingViewController {
+    @IBAction func getStartedButtonTapped(_ sender: UIButton) {
+        
+    }
+}
