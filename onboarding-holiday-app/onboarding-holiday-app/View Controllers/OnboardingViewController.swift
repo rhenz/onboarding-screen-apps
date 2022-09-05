@@ -13,7 +13,6 @@ class OnboardingViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet var darkView: UIView!
-    @IBOutlet var getStartedButton: UIButton!
     
     // MARK: - Properties
     
@@ -91,13 +90,5 @@ extension OnboardingViewController {
     
     private func playBackgroundVideoInLoop() {
         playerLooperService?.playLoopedVideo(in: view)
-    }
-}
-
-// MARK: - Actions
-
-extension OnboardingViewController {
-    @IBAction func getStartedButtonTapped(_ sender: UIButton) {
-        
     }
 }
