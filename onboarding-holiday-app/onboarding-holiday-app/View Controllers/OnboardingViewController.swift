@@ -17,13 +17,7 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var playerLooperService: AVPlayerLooperService = {
-        guard let filePath = Bundle.main.path(forResource: "bg_holiday", ofType: "mp4") else {
-            fatalError("Failed to find video path.")
-        }
-        
-        return AVPlayerLooperService(with: URL(fileURLWithPath: filePath))
-    }()
+    private var playerLooperService: AVPlayerLooperService?
     
     override var prefersStatusBarHidden: Bool { true }
     
@@ -32,17 +26,19 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        playBackgroundVideoInLoop()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigationBar()
+        setupPlayerLooperService()
+        playBackgroundVideoInLoop()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         showNavigationBar()
+        stopLooperService()
     }
 }
 
@@ -65,8 +61,21 @@ extension OnboardingViewController {
 // MARK: - AVPlayer
 
 extension OnboardingViewController {
+    private func setupPlayerLooperService() {
+        guard let filePath = Bundle.main.path(forResource: "bg_holiday", ofType: "mp4") else {
+            fatalError("Failed to find video path.")
+        }
+        
+        playerLooperService = AVPlayerLooperService(with: URL(fileURLWithPath: filePath))
+    }
+    
+    private func stopLooperService() {
+        playerLooperService?.stopLooping()
+        playerLooperService = nil
+    }
+    
     private func playBackgroundVideoInLoop() {
-        playerLooperService.playLoopedVideo(in: view)
+        playerLooperService?.playLoopedVideo(in: view)
     }
 }
 

@@ -13,8 +13,8 @@ class AVPlayerLooperService {
     
     let fileUrl: URL
     
-    private let videoPlayerLayer: AVPlayerLayer
-    private let videoPlayer: AVQueuePlayer
+    private var videoPlayerLayer: AVPlayerLayer?
+    private var videoPlayer: AVQueuePlayer?
     private let playerLooper: AVPlayerLooper
     
     // MARK: - Init
@@ -30,7 +30,7 @@ class AVPlayerLooperService {
         videoPlayer = AVQueuePlayer(items: [playerItem])
         
         // Loop the video
-        playerLooper = AVPlayerLooper(player: videoPlayer, templateItem: playerItem)
+        playerLooper = AVPlayerLooper(player: videoPlayer!, templateItem: playerItem)
         
         // Create video player layer
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
@@ -40,7 +40,9 @@ class AVPlayerLooperService {
     // MARK: - Public API
     
     func playLoopedVideo(in view: UIView) {
-        guard viewDoesNotContainPlayerLayer(in: view) else {
+        guard let videoPlayerLayer = videoPlayerLayer,
+              viewDoesNotContainPlayerLayer(in: view)
+        else {
             fatalError("Should not insert another player layer in the view")
         }
         
@@ -51,7 +53,15 @@ class AVPlayerLooperService {
         view.layer.insertSublayer(videoPlayerLayer, at: 0)
         
         // Play video
-        videoPlayer.play()
+        videoPlayer?.play()
+    }
+    
+    func stopLooping() {
+        videoPlayer?.pause()
+        videoPlayer = nil
+        
+        videoPlayerLayer?.removeFromSuperlayer()
+        videoPlayerLayer = nil
     }
 }
 
@@ -59,7 +69,7 @@ class AVPlayerLooperService {
 
 extension AVPlayerLooperService {
     private func viewDoesNotContainPlayerLayer(in view: UIView) -> Bool {
-        if let sublayers = view.layer.sublayers {
+        if let sublayers = view.layer.sublayers, let videoPlayerLayer = videoPlayerLayer {
             return !sublayers.contains(videoPlayerLayer)
         } else {
             return false
