@@ -76,7 +76,7 @@ extension OnboardingViewController {
 
 extension OnboardingViewController {
     private func setupPlayerLooperService() {
-        guard let filePath = Bundle.main.path(forResource: "bg_holiday", ofType: "mp4") else {
+        guard let filePath = Bundle.main.path(forResource: "bg_holiday-hd", ofType: "mp4") else {
             fatalError("Failed to find video path.")
         }
         

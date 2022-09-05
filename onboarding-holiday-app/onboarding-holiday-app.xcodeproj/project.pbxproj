@@ -14,8 +14,9 @@
 		C90435EA28C5DCD40022D4E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90435E928C5DCD40022D4E7 /* Assets.xcassets */; };
 		C90435ED28C5DCD40022D4E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90435EB28C5DCD40022D4E7 /* LaunchScreen.storyboard */; };
 		C90435FA28C5E07D0022D4E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90435F928C5E07D0022D4E7 /* MainViewController.swift */; };
-		C967F0B728C5F24D001E5581 /* bg_holiday.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C967F0B628C5F22E001E5581 /* bg_holiday.mp4 */; };
+		C967F0B728C5F24D001E5581 /* bg_holiday-4K.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C967F0B628C5F22E001E5581 /* bg_holiday-4K.mp4 */; };
 		C967F0BA28C6293C001E5581 /* AVPlayerLooperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967F0B928C6293C001E5581 /* AVPlayerLooperService.swift */; };
+		C967F0BC28C645FC001E5581 /* bg_holiday-hd.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C967F0BB28C645FC001E5581 /* bg_holiday-hd.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		C90435EC28C5DCD40022D4E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C90435EE28C5DCD40022D4E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "onboarding-holiday-app/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C90435F928C5E07D0022D4E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		C967F0B628C5F22E001E5581 /* bg_holiday.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg_holiday.mp4; sourceTree = "<group>"; };
+		C967F0B628C5F22E001E5581 /* bg_holiday-4K.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bg_holiday-4K.mp4"; sourceTree = "<group>"; };
 		C967F0B928C6293C001E5581 /* AVPlayerLooperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerLooperService.swift; sourceTree = "<group>"; };
+		C967F0BB28C645FC001E5581 /* bg_holiday-hd.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bg_holiday-hd.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,8 @@
 		C90435F628C5DCF90022D4E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C967F0B628C5F22E001E5581 /* bg_holiday.mp4 */,
+				C967F0BB28C645FC001E5581 /* bg_holiday-hd.mp4 */,
+				C967F0B628C5F22E001E5581 /* bg_holiday-4K.mp4 */,
 				C90435E928C5DCD40022D4E7 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -182,7 +185,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C967F0B728C5F24D001E5581 /* bg_holiday.mp4 in Resources */,
+				C967F0BC28C645FC001E5581 /* bg_holiday-hd.mp4 in Resources */,
+				C967F0B728C5F24D001E5581 /* bg_holiday-4K.mp4 in Resources */,
 				C90435ED28C5DCD40022D4E7 /* LaunchScreen.storyboard in Resources */,
 				C90435EA28C5DCD40022D4E7 /* Assets.xcassets in Resources */,
 				C90435E828C5DCD30022D4E7 /* Main.storyboard in Resources */,
