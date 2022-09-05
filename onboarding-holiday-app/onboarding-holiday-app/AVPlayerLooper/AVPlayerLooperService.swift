@@ -56,6 +56,14 @@ class AVPlayerLooperService {
         videoPlayer?.play()
     }
     
+    func play() {
+        videoPlayer?.play()
+    }
+    
+    func pause() {
+        videoPlayer?.pause()
+    }
+    
     func stopLooping() {
         videoPlayer?.pause()
         videoPlayer = nil

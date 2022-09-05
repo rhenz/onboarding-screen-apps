@@ -26,6 +26,9 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +42,18 @@ class OnboardingViewController: UIViewController {
         super.viewWillDisappear(animated)
         showNavigationBar()
         stopLooperService()
+    }
+}
+
+// MARK: - Actions
+
+extension OnboardingViewController {
+    @objc private func appMovedToBackground() {
+        playerLooperService?.pause()
+    }
+    
+    @objc private func appEnterForeground() {
+        playerLooperService?.play()
     }
 }
 
