@@ -43,6 +43,7 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="getStartedButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tQQ-eW-kJv"/>
+                                                    <segue destination="E6g-Zr-jCr" kind="show" id="hD1-w8-ZMk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -97,6 +98,7 @@
                             <constraint firstItem="2Uu-Sc-bT2" firstAttribute="centerY" secondItem="xsy-Za-cfc" secondAttribute="centerY" id="Yww-4t-MD4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Vz-bA-Cet"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXE-Aw-MKs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +120,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmm-B1-5kZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-190" y="125"/>
+            <point key="canvasLocation" x="1" y="125"/>
         </scene>
     </scenes>
     <resources>
