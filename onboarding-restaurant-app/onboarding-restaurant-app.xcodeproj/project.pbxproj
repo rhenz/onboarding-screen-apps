@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C94BBAAC28C744B100293372 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BBAAB28C744B100293372 /* OnboardingCell.swift */; };
+		C94BBAB128C7463500293372 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BBAB028C7463500293372 /* OnboardingItem.swift */; };
+		C94BBAB328C746D000293372 /* OnboardingItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BBAB228C746D000293372 /* OnboardingItemStore.swift */; };
 		C9C8AFBA28C728A50086E40F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8AFB928C728A50086E40F /* AppDelegate.swift */; };
 		C9C8AFBC28C728A50086E40F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8AFBB28C728A50086E40F /* SceneDelegate.swift */; };
 		C9C8AFBE28C728A50086E40F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8AFBD28C728A50086E40F /* OnboardingViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		C94BBAAB28C744B100293372 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		C94BBAB028C7463500293372 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
+		C94BBAB228C746D000293372 /* OnboardingItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemStore.swift; sourceTree = "<group>"; };
 		C9C8AFB628C728A50086E40F /* onboarding-restaurant-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "onboarding-restaurant-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C8AFB928C728A50086E40F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9C8AFBB28C728A50086E40F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		C94BBAAD28C7459B00293372 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C94BBAB028C7463500293372 /* OnboardingItem.swift */,
+				C94BBAB228C746D000293372 /* OnboardingItemStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9C8AFBE28C728A50086E40F /* OnboardingViewController.swift in Sources */,
+				C94BBAB328C746D000293372 /* OnboardingItemStore.swift in Sources */,
 				C9C8AFBA28C728A50086E40F /* AppDelegate.swift in Sources */,
+				C94BBAB128C7463500293372 /* OnboardingItem.swift in Sources */,
 				C94BBAAC28C744B100293372 /* OnboardingCell.swift in Sources */,
 				C9C8AFBC28C728A50086E40F /* SceneDelegate.swift in Sources */,
 			);
