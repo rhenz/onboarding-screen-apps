@@ -12,15 +12,15 @@ class OnboardingViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet var collectionView: UICollectionView!
-
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
     }
-
-
+    
+    
 }
 
 // MARK: - Setup UI
@@ -30,6 +30,9 @@ extension OnboardingViewController {
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.isPagingEnabled = true
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -52,6 +55,13 @@ extension OnboardingViewController: UICollectionViewDataSource {
 
 // MARK: - Collection View Delegate
 
-extension OnboardingViewController: UICollectionViewDelegate {
+extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
 }
