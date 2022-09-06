@@ -16,6 +16,17 @@ class OnboardingCell: UICollectionViewCell {
     @IBOutlet var actionButton: UIButton!
 }
 
+// MARK: - Internal Helper Methods
+
+extension OnboardingCell {
+    
+    func configure(with item: OnboardingItem) {
+        titleLabel.text = item.title
+        actionButton.backgroundColor = item.buttonColor
+        actionButton.titleLabel?.text = item.buttonTitle
+    }
+}
+
 // MARK: - Actions
 
 extension OnboardingCell {

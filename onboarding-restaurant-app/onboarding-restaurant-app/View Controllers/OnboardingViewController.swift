@@ -13,6 +13,10 @@ class OnboardingViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
+    // MARK: - Properties
+    
+    private let onboardingItemStore = OnboardingItemStore()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -44,11 +48,12 @@ extension OnboardingViewController {
 
 extension OnboardingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return onboardingItemStore.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! OnboardingCell
+        cell.configure(with: onboardingItemStore.items[indexPath.row])
         return cell
     }
 }
