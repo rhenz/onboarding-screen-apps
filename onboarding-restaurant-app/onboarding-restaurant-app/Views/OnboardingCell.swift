@@ -24,7 +24,7 @@ extension OnboardingCell {
     func configure(with item: OnboardingItem) {
         titleLabel.text = item.title
         actionButton.backgroundColor = item.buttonColor
-        actionButton.titleLabel?.text = item.buttonTitle
+        actionButton.setTitle(item.buttonTitle, for: .normal)
 
         animationView.animation = Animation.named(item.animationName)
         animationView.loopMode = .loop
