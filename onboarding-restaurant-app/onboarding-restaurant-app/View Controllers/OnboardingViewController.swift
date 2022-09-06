@@ -8,7 +8,13 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet var collectionView: UICollectionView!
 
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
