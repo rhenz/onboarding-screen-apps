@@ -36,6 +36,7 @@ extension OnboardingViewController {
         collectionView.collectionViewLayout = layout
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.contentInsetAdjustmentBehavior = .never
     }
 }
 
