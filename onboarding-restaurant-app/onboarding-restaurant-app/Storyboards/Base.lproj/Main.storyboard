@@ -21,19 +21,90 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tbK-KJ-HRX">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="409" height="830"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="xIm-hp-thK">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="2.5" y="0.0" width="409" height="830"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9wN-bu-ySB">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="409" height="830"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uUr-vA-aSi">
+                                                    <rect key="frame" x="0.0" y="118.5" width="409" height="593"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkR-xX-qVe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="409" height="409"/>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="WkR-xX-qVe" secondAttribute="height" multiplier="1:1" id="8uY-fg-MaD"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yM-yy-g3B">
+                                                            <rect key="frame" x="0.0" y="409" width="409" height="128"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The best food in town" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TB7-UN-Y25">
+                                                                    <rect key="frame" x="36" y="24" width="337" height="80"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="TB7-UN-Y25" secondAttribute="bottom" constant="24" id="8Fh-Fl-C5m"/>
+                                                                <constraint firstAttribute="trailing" secondItem="TB7-UN-Y25" secondAttribute="trailing" constant="36" id="KLi-y8-Uni"/>
+                                                                <constraint firstItem="TB7-UN-Y25" firstAttribute="leading" secondItem="4yM-yy-g3B" secondAttribute="leading" constant="36" id="L9r-4L-Rxg"/>
+                                                                <constraint firstItem="TB7-UN-Y25" firstAttribute="top" secondItem="4yM-yy-g3B" secondAttribute="top" constant="24" id="Nvi-3q-efb"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwG-rJ-Pi0">
+                                                            <rect key="frame" x="0.0" y="537" width="409" height="56"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-ja-ciM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="28" height="56"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="ezb-ja-ciM" secondAttribute="height" multiplier="1:2" id="QvU-gM-Ej0"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N3-1I-XuO">
+                                                                    <rect key="frame" x="28" y="0.0" width="353" height="56"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="56" id="7u2-dV-ByQ"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="Get started">
+                                                                        <backgroundConfiguration key="background">
+                                                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                        </backgroundConfiguration>
+                                                                        <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </buttonConfiguration>
+                                                                </button>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3b-FF-DaV">
+                                                                    <rect key="frame" x="381" y="0.0" width="28" height="56"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="n3b-FF-DaV" secondAttribute="height" multiplier="1:2" id="hQu-2k-8st"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="uUr-vA-aSi" secondAttribute="trailing" id="JWV-Ao-DOC"/>
+                                                <constraint firstItem="uUr-vA-aSi" firstAttribute="leading" secondItem="9wN-bu-ySB" secondAttribute="leading" id="Rcx-bg-nQT"/>
+                                                <constraint firstItem="uUr-vA-aSi" firstAttribute="centerY" secondItem="9wN-bu-ySB" secondAttribute="centerY" id="iv0-wh-W73"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="409" height="830"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -59,6 +130,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
