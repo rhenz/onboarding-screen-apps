@@ -110,6 +110,7 @@
                                         <size key="customSize" width="409" height="830"/>
                                         <connections>
                                             <outlet property="actionButton" destination="0N3-1I-XuO" id="4Fr-ZQ-eNd"/>
+                                            <outlet property="animationView" destination="WkR-xX-qVe" id="xGu-qA-Nv3"/>
                                             <outlet property="titleLabel" destination="TB7-UN-Y25" id="rEc-hQ-0pd"/>
                                         </connections>
                                     </collectionViewCell>

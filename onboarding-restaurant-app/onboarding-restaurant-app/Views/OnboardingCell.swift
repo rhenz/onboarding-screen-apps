@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class OnboardingCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet var animationView: UIView!
+    @IBOutlet var animationView: AnimationView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var actionButton: UIButton!
 }
@@ -24,6 +25,13 @@ extension OnboardingCell {
         titleLabel.text = item.title
         actionButton.backgroundColor = item.buttonColor
         actionButton.titleLabel?.text = item.buttonTitle
+
+        animationView.animation = Animation.named(item.animationName)
+        animationView.loopMode = .loop
+        
+        if !animationView.isAnimationPlaying {
+            animationView.play()
+        }
     }
 }
 

@@ -25,9 +25,9 @@ class OnboardingItemStore {
 extension OnboardingItemStore {
     private static let arrangedOnboardingItems: [OnboardingItem] = [
         // 1st
-        .init(title: "Get your favorite food delivered to you under 30 minutes!", animationName: "", buttonColor: .systemYellow, buttonTitle: "Next"),
+        .init(title: "Get your favorite food delivered to you under 30 minutes!", animationName: "lottie-deliveryguy-waiting", buttonColor: .systemYellow, buttonTitle: "Next"),
         
         // 2nd
-        .init(title: "We serve only from selected restaurants in your area.", animationName: "", buttonColor: .systemGreen, buttonTitle: "Order Now")
+        .init(title: "We serve only from selected restaurants in your area.", animationName: "lottie-deliveryguy-out-for-delivery", buttonColor: .systemGreen, buttonTitle: "Order Now")
     ]
 }

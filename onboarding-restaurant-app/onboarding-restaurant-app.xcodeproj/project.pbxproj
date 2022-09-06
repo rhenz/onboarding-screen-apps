@@ -11,8 +11,8 @@
 		C94BBAB128C7463500293372 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BBAB028C7463500293372 /* OnboardingItem.swift */; };
 		C94BBAB328C746D000293372 /* OnboardingItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BBAB228C746D000293372 /* OnboardingItemStore.swift */; };
 		C94BBAB628C74B0100293372 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C94BBAB528C74B0100293372 /* Lottie */; };
-		C94BBABD28C74D8D00293372 /* lottie-deliveryguy-waiting.json in Resources */ = {isa = PBXBuildFile; fileRef = C94BBABB28C74D8D00293372 /* lottie-deliveryguy-waiting.json */; };
 		C94BBABE28C74D8D00293372 /* lottie-deliveryguy-out-for-delivery.json in Resources */ = {isa = PBXBuildFile; fileRef = C94BBABC28C74D8D00293372 /* lottie-deliveryguy-out-for-delivery.json */; };
+		C94BBAC028C74EF800293372 /* lottie-deliveryguy-waiting.json in Resources */ = {isa = PBXBuildFile; fileRef = C94BBABF28C74EF800293372 /* lottie-deliveryguy-waiting.json */; };
 		C9C8AFBA28C728A50086E40F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8AFB928C728A50086E40F /* AppDelegate.swift */; };
 		C9C8AFBC28C728A50086E40F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8AFBB28C728A50086E40F /* SceneDelegate.swift */; };
 		C9C8AFBE28C728A50086E40F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8AFBD28C728A50086E40F /* OnboardingViewController.swift */; };
@@ -25,8 +25,8 @@
 		C94BBAAB28C744B100293372 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		C94BBAB028C7463500293372 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		C94BBAB228C746D000293372 /* OnboardingItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemStore.swift; sourceTree = "<group>"; };
-		C94BBABB28C74D8D00293372 /* lottie-deliveryguy-waiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-deliveryguy-waiting.json"; sourceTree = "<group>"; };
 		C94BBABC28C74D8D00293372 /* lottie-deliveryguy-out-for-delivery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-deliveryguy-out-for-delivery.json"; sourceTree = "<group>"; };
+		C94BBABF28C74EF800293372 /* lottie-deliveryguy-waiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-deliveryguy-waiting.json"; sourceTree = "<group>"; };
 		C9C8AFB628C728A50086E40F /* onboarding-restaurant-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "onboarding-restaurant-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C8AFB928C728A50086E40F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9C8AFBB28C728A50086E40F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				C94BBABC28C74D8D00293372 /* lottie-deliveryguy-out-for-delivery.json */,
-				C94BBABB28C74D8D00293372 /* lottie-deliveryguy-waiting.json */,
+				C94BBABF28C74EF800293372 /* lottie-deliveryguy-waiting.json */,
 				C9C8AFC228C728A60086E40F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -207,8 +207,8 @@
 				C94BBABE28C74D8D00293372 /* lottie-deliveryguy-out-for-delivery.json in Resources */,
 				C9C8AFC628C728A60086E40F /* LaunchScreen.storyboard in Resources */,
 				C9C8AFC328C728A60086E40F /* Assets.xcassets in Resources */,
-				C94BBABD28C74D8D00293372 /* lottie-deliveryguy-waiting.json in Resources */,
 				C9C8AFC128C728A50086E40F /* Main.storyboard in Resources */,
+				C94BBAC028C74EF800293372 /* lottie-deliveryguy-waiting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
